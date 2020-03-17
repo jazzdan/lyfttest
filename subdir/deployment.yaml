@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lyfttest
+  namespace: tilt-integration
+  labels:
+    app: lyfttest
+spec:
+  selector:
+    matchLabels:
+      app: lyfttest
+  template:
+    metadata:
+      labels:
+        app: lyfttest
+    spec:
+      containers:
+      - name: lyfttest
+        image: lyfttest
